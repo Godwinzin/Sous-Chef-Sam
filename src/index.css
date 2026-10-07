@@ -1,0 +1,199 @@
+:root {
+  --logo-red: #D15B43;
+  --logo-green: #3B7A75;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  background-color: hsl(0, 0%, 99%);
+}
+header{
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+  box-shadow: 0px 1px 10px rgb(235, 232, 232);
+}
+.logo-container{
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 20px;
+}
+.logo{
+  width: 30px;
+}
+.logo-name{
+  font-family: 'Pacifico', cursive; 
+  white-space: nowrap; 
+  margin: 0;
+  font-size: 1.8rem;
+  color: var(--logo-green);
+}
+.text-red {
+  color: var(--logo-red);
+}
+
+.main-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.input-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.input-container input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.input-container button {
+  background-color: #141414;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+}
+.input-container button:hover {
+  background-color: #333333;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.input-container button:active {
+  background-color: #000000;
+  transform: scale(0.97);
+  box-shadow: none;
+}
+
+.ingredients-section {
+  margin-top: 20px;
+}
+
+.ingredients-section h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.ingredients-list {
+  padding-left: 45px;
+  margin-bottom: 32px;
+  color: #333;
+  line-height: 1.8;
+}
+
+.generator {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f0efeb;
+  padding: 18px 24px;
+  border-radius: 8px;
+  gap: 16px;
+}
+
+.generator h3 {
+  margin: 0 0 4px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.generator p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.generator button {
+  background-color: #e65100;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+}
+.generator button:hover {
+  background-color: #cf4500;
+  box-shadow: 0 4px 8px rgba(230, 81, 0, 0.25);
+}
+
+.generator button:active {
+  background-color: #b33b00;
+  transform: scale(0.97);
+  box-shadow: none;
+}
+
+.suggested-recipe-container {
+  margin-top: 36px;
+  padding: 24px;
+  background-color: #fafafa;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  color: #2d3748;
+}
+
+.suggested-recipe-container h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #1a202c;
+}
+
+.suggested-recipe-container > p {
+  font-size: 0.95rem;
+  color: #718096;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.suggested-recipe-container h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
+.suggested-recipe-container ul,
+.suggested-recipe-container ol {
+  padding-left: 20px;
+  margin-bottom: 16px;
+}
+
+.suggested-recipe-container li {
+  line-height: 1.7;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+.error-message {
+    background-color: #FEF2F2;
+    border: 1px solid #FCA5A5;
+    color: #991B1B;
+    padding: 0.875rem 1.25rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
