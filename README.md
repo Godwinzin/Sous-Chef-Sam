@@ -25,11 +25,11 @@ An interactive React web application that suggests customized cooking recipes ba
 
 ---
 
-## 🚀 Getting Started
+<!-- ## 🚀 Getting Started
 
 Follow these steps to run the project locally on your machine.
 
-### Prerequisites
+ ### Prerequisites
 
 Ensure you have [Node.js](https://nodejs.org/) installed (v18 or higher recommended).
 
@@ -37,4 +37,4 @@ Ensure you have [Node.js](https://nodejs.org/) installed (v18 or higher recommen
 
 ```bash
 git clone [https://github.com/Godwinzin/Sous-Chef-Sam.git](https://github.com/Godwinzin/Sous-Chef-Sam.git)
-cd Sous-Chef-Sam
+cd Sous-Chef-Sam-->
