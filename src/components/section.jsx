@@ -3,6 +3,7 @@ import { getRecipeFromMistral } from "../ai"
 import Ingredients from "./ingredients"
 import Recipe from "./recipe"
 import RecipeLoader from "./RecipeLoader"
+import Placeholder from "./placeholder"
 
 export default function Section(){
     const [ingredients,setIngredients]= useState([])
@@ -55,10 +56,16 @@ export default function Section(){
                 />
                 <button type="submit">+ Add ingredient</button>
             </form>
+
+            {ingredients.length === 0 && !recipe && !loading && (
+                <Placeholder />
+            )}
+
            {ingredients.length > 0 &&
                 <Ingredients 
                 showRecipe={handleGetRecipe} ingredients={ingredients}  />
            }
+           
            {loading && <RecipeLoader />}
             {error && (
                 <div className="error-message" role="alert">
