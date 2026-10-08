@@ -3,7 +3,7 @@ export default function Header(){
     return(
         <header>
             <div className="logo-container" >
-                <img src={Logo} alt="logo" className="logo"/>
+                <img src={Logo} alt="Sous-Chef logo" className="logo"/>
                 <span className="logo-name">
                     <span className="text-red">
                         Sous
