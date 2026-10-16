@@ -1,6 +1,6 @@
 export async function getRecipeFromMistral(ingredientsArr) {
-  // Hardcoded directly to bypass any Vercel environment variable lookup issues
-  const API_URL = "https://sous-chef-sam-api.onrender.com";
+  // Use environment variable for the backend URL, falling back to localhost for local dev
+  const API_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000";
 
   try {
     const response = await fetch(`${API_URL}/api/recipe`, {
