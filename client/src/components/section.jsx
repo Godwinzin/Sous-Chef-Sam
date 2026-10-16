@@ -20,15 +20,29 @@ export default function Section(){
 
     async function handleGetRecipe() {
         setLoading(true)
+        setError(null) // Reset previous errors
+
+        // Check if the browser is explicitly offline first
+        if (!navigator.onLine) {
+            setError("No internet connection. Please check your network and try again.");
+            setLoading(false);
+            return;
+        }
+
         try {
             const recipeMarkdown = await getRecipeFromMistral(ingredients);
             setGetRecipe(recipeMarkdown);
-        } catch (error) {
-            console.error("Failed to fetch recipe", error);
-            setError("Failed to generate recipe. Please check your network connection and try again.");
-        }
-        finally{
-            setLoading(false)
+        } catch (err) {
+            console.error("Failed to fetch recipe", err);
+            
+            // Check if it's likely a network/connection failure vs an API/code error
+            if (!navigator.onLine || err.message?.toLowerCase().includes('network') || err.message?.toLowerCase().includes('failed to fetch')) {
+                setError("Network error. Please check your connection and try again.");
+            } else {
+                setError("Failed to generate recipe. Please try again later.");
+            }
+        } finally {
+            setLoading(false);
         }
     }
     
