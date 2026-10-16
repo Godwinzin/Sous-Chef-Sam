@@ -1,40 +1,38 @@
-# Sous-Chef Sam — AI Recipe Generator
+# Sous-Chef Sam
 
-An interactive React web application that suggests customized cooking recipes based on the ingredients you have on hand. Powered by the Hugging Face Inference API and Meta's Llama model, the app crafts markdown-formatted recipes on demand.
+**Sous-Chef Sam** is a full-stack web application that acts as your personal AI kitchen assistant. Simply enter the ingredients you have on hand in your pantry, and Sam will instantly craft a custom, step-by-step recipe tailored just for you!
+
+<!-- ![Sous-Chef Sam Preview](client/src/assets/logo.png) Optional: Add screenshot or banner here -->
 
 ---
 
-## Features
+##  Features
 
-- **Ingredient Tracker:** Add ingredients dynamically to your on-hand pantry list (automatically formatted to lowercase to prevent duplicates).
-- **AI-Powered Recommendations:** Generates custom step-by-step recipes formatted in clean Markdown.
-
-- **Enhanced UX & Smooth Auto-Scroll:** Automatically scrolls down to the recipe output once generated.
-- **Custom Loading Skeleton:** Displays animated micro-step status indicators  while waiting for the AI response.
-- **Responsive Styling:** Fully responsive layout designed for both desktop and mobile devices.
+- **Pantry Management:** Add and manage your available ingredients dynamically.
+- **AI-Powered Recipes:** Leverages advanced LLMs (via Groq/OpenAI-compatible APIs) to generate creative, practical recipes from your exact list of ingredients.
+- **Clean Markdown Formatting:** Automatically formats recipes with clear ingredient lists and step-by-step instructions.
+- **Full-Stack Architecture:** Built with a decoupled React frontend and a secure Node.js/Express backend.
 
 ---
 
 ## Tech Stack
 
-- **Frontend:** React 19, HTML5, CSS3
-- **Build Tool:** Vite
-- **AI Integration:** Hugging Face Inference API (`@huggingface/inference`)
-- **Model:** Meta Llama 3.2 3B Instruct
-- **Markdown Rendering:** `react-markdown`
+- **Frontend:** React, Vite, CSS / Modern Styling
+- **Backend:** Node.js, Express, Cors, Dotenv
+- **AI Integration:** Groq SDK (`openai`-compatible client)
 
 ---
 
-<!-- ## 🚀 Getting Started
+## Project Structure
 
-Follow these steps to run the project locally on your machine.
-
- ### Prerequisites
-
-Ensure you have [Node.js](https://nodejs.org/) installed (v18 or higher recommended).
-
-### 1. Clone the Repository
-
-```bash
-git clone [https://github.com/Godwinzin/Sous-Chef-Sam.git](https://github.com/Godwinzin/Sous-Chef-Sam.git)
-cd Sous-Chef-Sam-->
+```text
+Sous-Chef Sam/
+├── client/                 # React Frontend (Vite)
+│   ├── src/                # Components and logic
+│   ├── .env.example        # Frontend environment template
+│   └── package.json
+├── server/                 # Node.js & Express Backend
+│   ├── server.js           # Main server file & AI logic
+│   ├── .env.example        # Backend environment template
+│   └── package.json
+└── .gitignore              # Global root ignore rules
