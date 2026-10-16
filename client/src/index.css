@@ -196,36 +196,14 @@ header{
     border-radius: 6px;
     font-size: 0.9rem;
 }
-/* --- Mobile Responsiveness Adjustments (Side-by-side preserved) --- */
 @media (max-width: 480px) {
-  .main-container {
-    padding: 12px;
-  }
-
-  /* Keep the input and button side-by-side, just tighten spacing */
-  .input-container {
-    gap: 6px;
-    margin-bottom: 24px;
-  }
-
-  .input-container input {
-    padding: 8px 10px;
-    font-size: 0.9rem;
-  }
-
   .input-container button {
-    padding: 8px 12px;
-    font-size: 0.85rem;
-    white-space: nowrap; /* Prevents text from breaking into two lines */
+    font-size: 0; /* Hides the original text node without breaking layout */
   }
 
-  /* Keep the generator banner side-by-side or compact */
-  .generator {
-    padding: 14px 16px;
-  }
-
-  .generator button {
-    padding: 8px 12px;
-    font-size: 0.85rem;
+  /* Display only the plus sign and 'Add' */
+  .input-container button::after {
+    content: "+ Add";
+    font-size: 0.9rem; /* Match your desired mobile button font size */
   }
 }
