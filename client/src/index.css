@@ -198,12 +198,15 @@ header{
 }
 @media (max-width: 480px) {
   .input-container button {
-    font-size: 0; /* Hides the original text node without breaking layout */
+    font-size: 0; /* Hides the original text node */
+    white-space: nowrap; 
+    padding: 10px 12px; 
   }
 
-  /* Display only the plus sign and 'Add' */
+  /* Display only the plus sign and 'Add' with a smaller font size */
   .input-container button::after {
     content: "+ Add";
-    font-size: 0.9rem; /* Match your desired mobile button font size */
+    font-size: 0.8rem; 
+    white-space: nowrap;
   }
 }
