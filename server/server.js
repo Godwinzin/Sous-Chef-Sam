@@ -13,7 +13,7 @@ app.use(cors());
 app.use(express.json());
 
 // Initialize Groq client
-const groq = new Groq({ apiKey: process.env.VITE_API_KEY });
+const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
 const SYSTEM_PROMPT = `
 You are an assistant that receives a list of ingredients that a 

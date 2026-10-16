@@ -24,7 +24,7 @@ export default function Section(){
             const recipeMarkdown = await getRecipeFromMistral(ingredients);
             setGetRecipe(recipeMarkdown);
         } catch (error) {
-            console.error("Failed to fetch recipe from Hugging Face", error);
+            console.error("Failed to fetch recipe", error);
             setError("Failed to generate recipe. Please check your network connection and try again.");
         }
         finally{
