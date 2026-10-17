@@ -8,7 +8,7 @@ dotenv.config();
 
 const app = express();
 //Ensures every request does not look like it came from same IP
-app.set('trust proxt', 1)
+app.set('trust proxy', 1)
 
 const PORT = process.env.PORT || 5000;
 
