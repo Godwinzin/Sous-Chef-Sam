@@ -6,7 +6,7 @@ export default function Placeholder(){
             <div className="placeholder-steps">
                 <div className="step">
                     <span>1</span>
-                    <p>Add 4 or more ingredients to your pantry list.</p>
+                    <p>Add <strong>4 or more</strong> ingredients to your pantry list.</p>
                 </div>
                 <div className="step">
                     <span>2</span>

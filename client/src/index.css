@@ -84,6 +84,13 @@ header{
   transform: scale(0.97);
   box-shadow: none;
 }
+input::placeholder{
+  font-family: system-ui, -apple-system, sans-serif;
+  color: #a1a1aa;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 15px;
+}
 
 .ingredients-section {
   margin-top: 20px;

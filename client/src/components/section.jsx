@@ -65,7 +65,7 @@ export default function Section(){
                     name="ing" 
                     id="ing" 
                     aria-label="Add ingredient" 
-                    placeholder="e.g. chickpeas" 
+                    placeholder="Enter ingredients(e.g. eggs,tomatoes,onions)..." 
                     required
                 />
                 <button type="submit">+ Add ingredient</button>
