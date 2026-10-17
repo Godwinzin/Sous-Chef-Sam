@@ -5,6 +5,17 @@ import Recipe from "./recipe"
 import RecipeLoader from "./RecipeLoader"
 import Placeholder from "./placeholder"
 
+function cleanMarkdown(md) {
+    return md
+        .replace(/^#{1,6}\s+/gm, "")
+        .replace(/^\s*[-*+]\s+/gm, "• ")
+        .replace(/(\*\*|__)(.*?)\1/g, "$2")
+        .replace(/(\*|_)(.*?)\1/g, "$2")
+        .replace(/`([^`]+)`/g, "$1")
+        .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
+        .trim()
+}
+
 export default function Section(){
     const [ingredients,setIngredients]= useState(()=> {
         try {
@@ -68,9 +79,9 @@ export default function Section(){
 
     async function handleCopy() {
        try{
-            await navigator.clipboard.writeText(recipe)
+            await navigator.clipboard.writeText(cleanMarkdown(recipe))
             setCopied(true)
-            setTimeout(()=>setCopied(false))
+            setTimeout(()=>setCopied(false),2000)
        }
        catch(err){
             console.error("Failed to copy recipe",err)
