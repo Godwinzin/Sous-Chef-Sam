@@ -6,10 +6,19 @@ import RecipeLoader from "./RecipeLoader"
 import Placeholder from "./placeholder"
 
 export default function Section(){
-    const [ingredients,setIngredients]= useState([])
+    const [ingredients,setIngredients]= useState(()=> {
+        try {
+            const saved = localStorage.getItem("ingredients")
+            return saved ? JSON.parse(saved) : []
+        }
+        catch{
+            return []
+        }
+    })
     const [recipe,setGetRecipe]=useState("")
     const [loading,setLoading]= useState(false)
     const [error, setError] = useState(null)
+    const [copied,setCopied] =useState(false)
 
     const recipeRef = useRef(null)
     useEffect(() => {
@@ -17,6 +26,17 @@ export default function Section(){
             recipeRef.current.scrollIntoView({ behavior: "smooth" })
         }
     }, [recipe])
+
+    useEffect(()=>{
+        localStorage.setItem("ingredients",JSON.stringify(ingredients))
+    },[ingredients])
+
+    function removeIngredient(ingToRemove){
+        setIngredients(prev=>prev.filter(ing=> ing!==ingToRemove))
+    }
+    function clearIngredients(){
+        setIngredients([])
+    }
 
     async function handleGetRecipe() {
         setLoading(true)
@@ -44,6 +64,17 @@ export default function Section(){
         } finally {
             setLoading(false);
         }
+    }
+
+    async function handleCopy() {
+       try{
+            await navigator.clipboard.writeText(recipe)
+            setCopied(true)
+            setTimeout(()=>setCopied(false))
+       }
+       catch(err){
+            console.error("Failed to copy recipe",err)
+       } 
     }
     
     function addIngredient(formData){
@@ -77,7 +108,10 @@ export default function Section(){
 
            {ingredients.length > 0 &&
                 <Ingredients 
-                showRecipe={handleGetRecipe} ingredients={ingredients}  />
+                showRecipe={handleGetRecipe} 
+                ingredients={ingredients} 
+                removeIngredient={removeIngredient}
+                clearIngredients={clearIngredients} />
            }
            
            {loading && <RecipeLoader />}
@@ -86,8 +120,15 @@ export default function Section(){
                     <p> {error}</p>
                 </div>
             )}
-           {recipe && !loading&& 
-               ( <Recipe ref={recipeRef} recipe={recipe} />)
+           {recipe && !loading && 
+               (
+                <>
+                     <Recipe ref={recipeRef} recipe={recipe} />
+                     <button className="copy-btn" onClick={handleCopy}>
+                        {copied ? "Copied" :"Copy recipe"}
+                     </button>
+                </> 
+            )
            }
         </main>
     )

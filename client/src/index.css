@@ -99,7 +99,6 @@ input::placeholder{
 .ingredients-section h2 {
   font-size: 1.25rem;
   font-weight: 600;
-  margin-bottom: 12px;
 }
 
 .ingredients-list {
@@ -107,6 +106,50 @@ input::placeholder{
   margin-bottom: 32px;
   color: #333;
   line-height: 1.8;
+}
+
+.ingredients-header{
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  max-width: 300px;
+}
+
+.clear-btn{
+  font-family: inherit;
+  background: none;
+  border: none;
+  color: #999;
+  font-size: 0.875rem;
+  text-decoration: underline;
+  padding: 4px 0;
+  cursor: pointer;
+  transition: color 2s;
+}
+
+.clear-btn:hover{
+  color: #c0392b;
+}
+
+.remove-btn{
+  font-family: inherit;
+  background: none;
+  border: none;
+  color: #999;
+  font-size: 0.9rem;
+  font-weight: bold;
+  line-height: 1;
+  padding: 4px 8px;
+  margin-left: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition:color 0.2s, background-color 2s;
+}
+
+.remove-btn:hover{
+  color: #c0392b;
+  background-color: #f0efeb;
 }
 
 .generator {
@@ -151,6 +194,24 @@ input::placeholder{
   background-color: #b33b00;
   transform: scale(0.97);
   box-shadow: none;
+}
+
+.copy-btn{
+  font-family: inherit;
+  background-color: #141414;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 12px;
+  transition: background-color 0.2s ease ;
+}
+
+.copy-btn:hover{
+  background-color: #333;
 }
 
 .suggested-recipe-container {
