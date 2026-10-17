@@ -3,6 +3,7 @@ import { useState, useEffect } from "react"
 const LOADING_STEPS = [
     "Analyzing your ingredients...",
     "Consulting chef flavor pairings...",
+    "Balancing flavors and portions...",
     "Crafting step-by-step instructions...",
     "Plating up your custom recipe..."
 ]

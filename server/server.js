@@ -2,15 +2,26 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import { Groq } from 'groq-sdk';
+import rateLimit from 'express-rate-limit'
 
 dotenv.config();
 
 const app = express();
+//Ensures every request does not look like it came from same IP
+app.set('trust proxt', 1)
+
 const PORT = process.env.PORT || 5000;
 
 // Middleware
-app.use(cors());
+app.use(cors({
+    origin:process.env.CLIENT_URL || 'http://localhost:5173'
+}));
 app.use(express.json());
+
+app.use('/api/',rateLimit({
+    windowMs:15 * 60 * 100,
+    max: 20
+}))
 
 // Initialize Groq client
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
