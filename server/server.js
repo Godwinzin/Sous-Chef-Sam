@@ -30,6 +30,8 @@ const SYSTEM_PROMPT = `
 You are an assistant that receives a list of ingredients that a 
 user has and suggests a recipe they could make with some or all of those
 ingredients. 
+Only use the listed ingredients plus basic pantry items.Do not add meat,dairy,
+or other main ingredients the user didn't list.
 
 CRITICAL FORMATTING INSTRUCTIONS:
 - Do NOT use markdown tables (no pipes like '| Item | Amount |').
